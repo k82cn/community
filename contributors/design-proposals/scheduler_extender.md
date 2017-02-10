@@ -1,13 +1,13 @@
 # Scheduler extender
 
 There are three ways to add new scheduling rules (predicates and priority
-functions) to Kubernetes: (1) by adding these rules to the scheduler and
-recompiling (described here:
-https://github.com/kubernetes/kubernetes/blob/master/docs/devel/scheduler.md),
-(2) implementing your own scheduler process that runs instead of, or alongside
-of, the standard Kubernetes scheduler, (3) implementing a "scheduler extender"
-process that the standard Kubernetes scheduler calls out to as a final pass when
-making scheduling decisions.
+functions) to Kubernetes:
+1. adding these rules to the scheduler and recompiling, described [here](
+https://github.com/kubernetes/kubernetes/blob/master/docs/devel/scheduler.md)
+1. implementing your own scheduler process that runs instead of, or alongside of,
+ the standard Kubernetes scheduler
+1. implementing a "scheduler extender" process that the standard Kubernetes scheduler
+calls out to as a final pass when making scheduling decisions
 
 This document describes the third approach. This approach is needed for use
 cases where scheduling decisions need to be made on resources not directly
